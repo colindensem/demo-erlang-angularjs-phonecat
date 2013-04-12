@@ -13,8 +13,16 @@
 %
 % Note that routing across applications results in a 302 redirect.
 
+% Make Angular do the route work!
+% Match any url begining with a number to the index action.
+%{"/[0-9].*", [{controller, "index"}, {action, "index"}]}.
+% Match any url begining with a character to the index action.
+{"/[a-z,A-Z].*", [{controller, "index"}, {action, "index"}]}.
+
+
 % Front page
-% {"/", [{controller, "world"}, {action, "hello"}]}.
+{"/", [{controller, "index"}, {action, "index"}]}.
+
 
 % 404 File Not Found handler
 % {404, [{controller, "world"}, {action, "lost"}]}.
